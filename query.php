@@ -4,7 +4,7 @@ $baidu = 'https://www.baidu.com/home/other/data/weatherInfo?city=%s';
 
 isset ( $argv [1] ) && $query = trim ( $argv [1] );
 if (isset ( $query ) && ! empty ( $query )) {
-	$url = sprintf ( $baidu, $query );
+	$url = sprintf ( $baidu, urlencode ( $query ) );
 	$wl = new Workflows ();
 	$response = $wl->request ( $url );
 	$response = json_decode ( $response, true );
