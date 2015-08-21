@@ -1,10 +1,13 @@
 <?php
 require_once 'workflow.php';
+require_once 'City.php';
 $baidu = 'https://www.baidu.com/home/other/data/weatherInfo?city=%s';
 
 isset ( $argv [1] ) && $query = trim ( $argv [1] );
 $wl = new Workflows ();
 if (isset ( $query ) && ! empty ( $query )) {
+	$city = City::instance ();
+	$query = $city->getName ( $query );
 	$url = sprintf ( $baidu, urlencode ( $query ) );
 	$response = $wl->request ( $url );
 	$response = json_decode ( $response, true );
