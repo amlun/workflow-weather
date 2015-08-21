@@ -1,14 +1,14 @@
 <?php
 require_once 'workflow.php';
 require_once 'City.php';
-require_once 'Client/Baidu.php';
+require_once 'Client/BaiduWeather.php';
 isset ( $argv [1] ) && $query = trim ( $argv [1] );
 $wl = new Workflows ();
 if (isset ( $query ) && ! empty ( $query )) {
 	$city = City::instance ();
 	$query = $city->getName ( $query );
 	try {
-		$baidu = Baidu::instance ( $query );
+		$baidu = BaiduWeather::instance ( $query );
 		$baidu->current ( $wl );
 		$baidu->days ( $wl );
 	} catch ( Exception $e ) {

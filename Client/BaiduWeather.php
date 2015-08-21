@@ -5,7 +5,7 @@
  * @author lunweiwei
  *        
  */
-class Baidu {
+class BaiduWeather {
 	const ENDPOINT = 'https://www.baidu.com/home/other/data/weatherInfo?city=%s';
 	private static $_instances = [ ];
 	private static $_days = [ 
