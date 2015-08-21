@@ -52,9 +52,9 @@
 				<key>script</key>
 				<string>php -f query.php "{query}"</string>
 				<key>subtext</key>
-				<string>输入城市名称</string>
+				<string>请输入中国城市的全称</string>
 				<key>title</key>
-				<string>输入城市名称</string>
+				<string>输入城市名</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
