@@ -8,9 +8,9 @@ if (isset ( $query ) && ! empty ( $query )) {
 	$city = City::instance ();
 	$query = $city->getName ( $query );
 	try {
-		$baidu = BaiduWeather::instance ( $query );
-		$baidu->current ( $wl );
-		$baidu->days ( $wl );
+		$baidu = BaiduWeather::instance ( $wl, $query );
+		$baidu->current ();
+		$baidu->days ();
 	} catch ( Exception $e ) {
 		$wl->result ( 'response_error', null, '找不到对应城市的天气信息', '请求失败，请重试', '' );
 	}

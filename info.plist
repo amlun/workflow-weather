@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>492F630C-7D02-4C35-9C51-8DAFE4ADA56B</string>
+				<string>90A2B7F5-318D-4F7B-98FA-C0BEAA649224</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -80,7 +80,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>492F630C-7D02-4C35-9C51-8DAFE4ADA56B</string>
+			<string>90A2B7F5-318D-4F7B-98FA-C0BEAA649224</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -89,12 +89,12 @@
 	<string>获取中国各个城市的天气</string>
 	<key>uidata</key>
 	<dict>
-		<key>492F630C-7D02-4C35-9C51-8DAFE4ADA56B</key>
+		<key>51A282F1-926A-4D0F-9686-9F0F9D910755</key>
 		<dict>
 			<key>ypos</key>
 			<real>90</real>
 		</dict>
-		<key>51A282F1-926A-4D0F-9686-9F0F9D910755</key>
+		<key>90A2B7F5-318D-4F7B-98FA-C0BEAA649224</key>
 		<dict>
 			<key>ypos</key>
 			<real>90</real>
