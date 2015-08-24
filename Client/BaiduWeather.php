@@ -8,6 +8,7 @@
 class BaiduWeather {
 	const ENDPOINT = 'https://www.baidu.com/home/other/data/weatherInfo?city=%s';
 	const LIFETIME = 3600;
+	const QUERY_DEFAULT = 'auto';
 	private static $_instances = [ ];
 	private static $_days = [ 
 			'today' => '今日',
@@ -24,7 +25,7 @@ class BaiduWeather {
 	 *
 	 * @param string $query        	
 	 */
-	private function __construct(Workflows $wl, $query) {
+	private function __construct(Workflows $wl, $query = null) {
 		$this->_workflow = $wl;
 		$this->_query = $query;
 		$this->initWeather ();
@@ -41,7 +42,11 @@ class BaiduWeather {
 			$this->_weather = $weather;
 			return;
 		}
-		$url = sprintf ( self::ENDPOINT, $this->_query );
+		if ($this->_query == self::QUERY_DEFAULT) {
+			$url = sprintf ( self::ENDPOINT, '' );
+		} else {
+			$url = sprintf ( self::ENDPOINT, $this->_query );
+		}
 		$response = $this->_get ( $url );
 		$response && $response = json_decode ( $response, true );
 		if (0 == $response ['errNo'] && isset ( $response ['data'] ['weather'] ['content'] )) {
@@ -96,7 +101,9 @@ class BaiduWeather {
 	 * @param string $query        	
 	 * @return Baidu
 	 */
-	public static function instance(Workflows $wl, $query) {
+	public static function instance(Workflows $wl, $query = null) {
+		if (empty ( $query ))
+			$query = self::QUERY_DEFAULT;
 		$query = urlencode ( $query );
 		if (! isset ( self::$_instances [$query] )) {
 			self::$_instances [$query] = new static ( $wl, $query );
