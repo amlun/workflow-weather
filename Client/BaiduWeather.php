@@ -66,7 +66,7 @@ class BaiduWeather {
 		$weather_source_url = isset ( $this->_weather ['calendar'] ['weatherSourceUrl'] ) ? $this->_weather ['calendar'] ['weatherSourceUrl'] : null;
 		$lunar = isset ( $this->_weather ['calendar'] ['lunar'] ) ? $this->_weather ['calendar'] ['lunar'] : null;
 		if (isset ( $this->_workflow )) {
-			$this->_workflow->result ( $city, $weather_source_url, "当前气温：{$currenttemp} @ {$city}", "{$week} {$lunar} 数据来自:{$source} ", '' );
+			$this->_workflow->result ( $city, $weather_source_url, "当前气温：{$currenttemp} @ {$city}", "{$week}，{$lunar}， 数据来自：{$source} ", '' );
 		}
 	}
 	/**
@@ -86,7 +86,7 @@ class BaiduWeather {
 			$time = $day_weather ['time'];
 			$icon = $day_weather ['imgs'] [0];
 			if (isset ( $this->_workflow )) {
-				$this->_workflow->result ( $day, $day_weather ['link'], "{$day_title}{$time} {$condition}", "气温{$temp} {$wind} PM2.5 {$pm25} {$date}", 'icon/' . $icon . '.jpg' );
+				$this->_workflow->result ( $day, $day_weather ['link'], "{$time} {$day_title}，{$condition}", "气温{$temp}，{$wind}，PM2.5：{$pm25}，{$date}", 'icon/' . $icon . '.jpg' );
 			}
 		}
 	}
