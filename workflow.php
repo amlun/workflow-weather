@@ -409,7 +409,7 @@ class Workflows {
 	*
 	* @param file - filename to read the cache data from
 	* @return false if the file cannot be found, the file data if found. If the file
-	*			format is json encoded, then a json object is returned.
+	*			format is json encoded, then a json object converted into associative arrays is returned.
 	*/
 	public function read( $a )
 	{
