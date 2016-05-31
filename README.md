@@ -1,4 +1,4 @@
-# workflow-weather - [download](https://github.com/amlun/workflow-weather/raw/master/China-Weather.alfredworkflow "Download")
+# workflow-weather for Alfred 2 - [download](https://github.com/amlun/workflow-weather/raw/master/China-Weather.alfredworkflow "Download")
  - 获取中国对应城市的天气，数据来源自百度（中国天气网）
 
 # 需求
