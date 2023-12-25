@@ -49,7 +49,7 @@ class BaiduWeather {
 		}
 		$response = $this->_get ( $url );
 		$response && $response = json_decode ( $response, true );
-		if (0 == $response ['errNo'] && isset ( $response ['data'] ['weather'] ['content'] )) {
+		if (is_array($response) && 0 == $response ['errNo'] && isset ( $response ['data'] ['weather'] ['content'] )) {
 			$this->_weather = $response ['data'] ['weather'] ['content'];
 			$this->_workflow->write ( $this->_weather, $this->_query );
 		} elseif (! empty ( $weather ) && $file_time) {

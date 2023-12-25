@@ -462,7 +462,7 @@ class Workflows {
 	* @param $auto - the autocomplete value for the result item
 	* @return array - array item to be passed back to Alfred
 	*/
-	public function result( $uid, $arg, $title, $sub, $icon, $valid='yes', $auto=null, $type=null )
+	public function result( $uid, $arg, $title, $sub, $icon, $valid='yes', $auto='', $type='' )
 	{
 		$temp = array(
 			'uid' => $uid,
