@@ -2,7 +2,7 @@
 require_once 'workflow.php';
 require_once 'City.php';
 require_once 'Client/BaiduWeather.php';
-$query = null;
+$query = '';
 isset ( $argv [1] ) && $query = trim ( $argv [1] );
 $wl = new Workflows ();
 $city = City::instance ();

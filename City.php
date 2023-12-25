@@ -15,7 +15,7 @@ class City {
 	}
 	private function __construct() {
 		if (is_null ( self::$_dict )) {
-			self::$_dict = require_once __DIR__ . '/data/dict.php';
+			self::$_dict = require __DIR__ . '/data/dict.php';
 		}
 	}
 	public function getName($short) {
